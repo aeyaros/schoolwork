@@ -1,0 +1,192 @@
+Lunar Lander Game log file: test 7.txt
+By Andrew Yaros - CS 171 - Winter 2017
+
+Ship name: Apollo 7
+
+Did user want instructions? n
+
+***** START OF GAME *****
+
+Status of your Apollo 7 spacecraft:
+Time  : 0 seconds
+Height: 1000 feet
+Speed : 50 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 1 seconds
+Height: 947.5 feet
+Speed : 55 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 2 seconds
+Height: 890 feet
+Speed : 60 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 3 seconds
+Height: 827.5 feet
+Speed : 65 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 4 seconds
+Height: 760 feet
+Speed : 70 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 5 seconds
+Height: 687.5 feet
+Speed : 75 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 6 seconds
+Height: 610 feet
+Speed : 80 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 7 seconds
+Height: 527.5 feet
+Speed : 85 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 8 seconds
+Height: 440 feet
+Speed : 90 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 9 seconds
+Height: 347.5 feet
+Speed : 95 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 10 seconds
+Height: 250 feet
+Speed : 100 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 7 spacecraft:
+Time  : 11 seconds
+Height: 162.5 feet
+Speed : 75 feet/second
+Fuel  : 120 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 7 spacecraft:
+Time  : 12 seconds
+Height: 100 feet
+Speed : 50 feet/second
+Fuel  : 90 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 7 spacecraft:
+Time  : 13 seconds
+Height: 62.5 feet
+Speed : 25 feet/second
+Fuel  : 60 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 7 spacecraft:
+Time  : 14 seconds
+Height: 50 feet
+Speed : 0 feet/second
+Fuel  : 30 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 15 seconds
+Height: 47.5 feet
+Speed : 5 feet/second
+Fuel  : 30 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 7 spacecraft:
+Time  : 16 seconds
+Height: 45 feet
+Speed : 0 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 17 seconds
+Height: 42.5 feet
+Speed : 5 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 18 seconds
+Height: 35 feet
+Speed : 10 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 7 spacecraft:
+Time  : 19 seconds
+Height: 27.5 feet
+Speed : 5 feet/second
+Fuel  : 10 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 20 seconds
+Height: 20 feet
+Speed : 10 feet/second
+Fuel  : 10 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 7 spacecraft:
+Time  : 21 seconds
+Height: 7.5 feet
+Speed : 15 feet/second
+Fuel  : 10 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+***** CONTACT *****
+Touchdown at 21.5505 seconds
+Landing velocity = : 12.2474 feet/second.
+0 pounds remaining.
+
+You blasted a huge crater!
+Your family will be notified... by mail.

@@ -1,0 +1,210 @@
+Lunar Lander Game log file: test 1.txt
+By Andrew Yaros - CS 171 - Winter 2017
+
+Ship name: Apollo 1
+
+Did user want instructions? y
+
+LUNAR LANDER INSTRUCTIONS You are landing on the moon and have taken over manual control 1000 feet above a good landing spot. You have a downward velocity of 50 feet/sec. 150 units of fuel remain. Here are the rules that govern your Apollo 1 space-craft: (1) After each second, the height, velocity, and remaining fuel will be reported via DIGBY, your on-board computer. (2) After each report, enter the number of units of fuel you wish to burn during the next second. Each unit of fuel will slow your descent by 1 foot/sec. (3) The maximum thrust of your engine is 30 feet/sec/sec or 0 units of fuel per second. (4) When you contact the lunar surface, your descent engine will automatically shut down and you will be given a report of your landing speed and remaining fuel. (5) If you run out of fuel, you will no longer be prompted to enter the number of units to burn each second. Your second by second reports will continue until you contact the lunar surface.  
+
+***** START OF GAME *****
+
+Status of your Apollo 1 spacecraft:
+Time  : 0 seconds
+Height: 1000 feet
+Speed : 50 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 1 seconds
+Height: 950 feet
+Speed : 50 feet/second
+Fuel  : 145 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 2 seconds
+Height: 900 feet
+Speed : 50 feet/second
+Fuel  : 140 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 3 seconds
+Height: 850 feet
+Speed : 50 feet/second
+Fuel  : 135 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 4 seconds
+Height: 800 feet
+Speed : 50 feet/second
+Fuel  : 130 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 5 seconds
+Height: 750 feet
+Speed : 50 feet/second
+Fuel  : 125 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 6 seconds
+Height: 700 feet
+Speed : 50 feet/second
+Fuel  : 120 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 7 seconds
+Height: 650 feet
+Speed : 50 feet/second
+Fuel  : 115 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 8 seconds
+Height: 600 feet
+Speed : 50 feet/second
+Fuel  : 110 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 9 seconds
+Height: 550 feet
+Speed : 50 feet/second
+Fuel  : 105 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 10 seconds
+Height: 500 feet
+Speed : 50 feet/second
+Fuel  : 100 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 11 seconds
+Height: 450 feet
+Speed : 50 feet/second
+Fuel  : 95 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 12 seconds
+Height: 400 feet
+Speed : 50 feet/second
+Fuel  : 90 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 13 seconds
+Height: 350 feet
+Speed : 50 feet/second
+Fuel  : 85 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  5
+
+Status of your Apollo 1 spacecraft:
+Time  : 14 seconds
+Height: 300 feet
+Speed : 50 feet/second
+Fuel  : 80 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 15 seconds
+Height: 252.5 feet
+Speed : 45 feet/second
+Fuel  : 70 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 16 seconds
+Height: 210 feet
+Speed : 40 feet/second
+Fuel  : 60 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 17 seconds
+Height: 172.5 feet
+Speed : 35 feet/second
+Fuel  : 50 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 18 seconds
+Height: 140 feet
+Speed : 30 feet/second
+Fuel  : 40 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 19 seconds
+Height: 112.5 feet
+Speed : 25 feet/second
+Fuel  : 30 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 1 spacecraft:
+Time  : 20 seconds
+Height: 90 feet
+Speed : 20 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 1 spacecraft:
+Time  : 21 seconds
+Height: 67.5 feet
+Speed : 25 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 1 spacecraft:
+Time  : 22 seconds
+Height: 40 feet
+Speed : 30 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 1 spacecraft:
+Time  : 23 seconds
+Height: 7.5 feet
+Speed : 35 feet/second
+Fuel  : 20 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  20
+
+***** CONTACT *****
+Touchdown at 23.2251 seconds
+Landing velocity = : 31.6228 feet/second.
+0 pounds remaining.
+
+Your ship is a wreck!
+Your family will be notified... by telegraph.

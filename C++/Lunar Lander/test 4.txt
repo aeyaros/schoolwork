@@ -1,0 +1,236 @@
+Lunar Lander Game log file: test 4.txt
+By Andrew Yaros - CS 171 - Winter 2017
+
+Ship name: Apollo 4
+
+Did user want instructions? n
+
+***** START OF GAME *****
+
+Status of your Apollo 4 spacecraft:
+Time  : 0 seconds
+Height: 1000 feet
+Speed : 50 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 1 seconds
+Height: 950.5 feet
+Speed : 49 feet/second
+Fuel  : 144 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 2 seconds
+Height: 902 feet
+Speed : 48 feet/second
+Fuel  : 138 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 3 seconds
+Height: 854.5 feet
+Speed : 47 feet/second
+Fuel  : 132 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 4 seconds
+Height: 808 feet
+Speed : 46 feet/second
+Fuel  : 126 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 5 seconds
+Height: 762.5 feet
+Speed : 45 feet/second
+Fuel  : 120 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 6 seconds
+Height: 718 feet
+Speed : 44 feet/second
+Fuel  : 114 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 7 seconds
+Height: 674.5 feet
+Speed : 43 feet/second
+Fuel  : 108 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 8 seconds
+Height: 632 feet
+Speed : 42 feet/second
+Fuel  : 102 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 9 seconds
+Height: 590.5 feet
+Speed : 41 feet/second
+Fuel  : 96 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 10 seconds
+Height: 550 feet
+Speed : 40 feet/second
+Fuel  : 90 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 11 seconds
+Height: 510.5 feet
+Speed : 39 feet/second
+Fuel  : 84 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 12 seconds
+Height: 472 feet
+Speed : 38 feet/second
+Fuel  : 78 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 13 seconds
+Height: 434.5 feet
+Speed : 37 feet/second
+Fuel  : 72 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 14 seconds
+Height: 398 feet
+Speed : 36 feet/second
+Fuel  : 66 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 15 seconds
+Height: 362.5 feet
+Speed : 35 feet/second
+Fuel  : 60 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 16 seconds
+Height: 328 feet
+Speed : 34 feet/second
+Fuel  : 54 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 17 seconds
+Height: 294.5 feet
+Speed : 33 feet/second
+Fuel  : 48 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  6
+
+Status of your Apollo 4 spacecraft:
+Time  : 18 seconds
+Height: 262 feet
+Speed : 32 feet/second
+Fuel  : 42 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 19 seconds
+Height: 231 feet
+Speed : 30 feet/second
+Fuel  : 35 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 20 seconds
+Height: 202 feet
+Speed : 28 feet/second
+Fuel  : 28 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 21 seconds
+Height: 175 feet
+Speed : 26 feet/second
+Fuel  : 21 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 22 seconds
+Height: 150 feet
+Speed : 24 feet/second
+Fuel  : 14 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 23 seconds
+Height: 127 feet
+Speed : 22 feet/second
+Fuel  : 7 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  7
+
+Status of your Apollo 4 spacecraft:
+Time  : 24 seconds
+Height: 106 feet
+Speed : 20 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 4 spacecraft:
+Time  : 25 seconds
+Height: 83.5 feet
+Speed : 25 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 4 spacecraft:
+Time  : 26 seconds
+Height: 56 feet
+Speed : 30 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 4 spacecraft:
+Time  : 27 seconds
+Height: 23.5 feet
+Speed : 35 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+***** CONTACT *****
+Touchdown at 27.642 seconds
+Landing velocity = : 38.2099 feet/second.
+0 pounds remaining.
+
+Your ship is a wreck!
+Your family will be notified... by telegraph.

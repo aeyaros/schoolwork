@@ -1,0 +1,336 @@
+Lunar Lander Game log file: test 2.txt
+By Andrew Yaros - CS 171 - Winter 2017
+
+Ship name: Apollo 2
+
+Did user want instructions? N
+
+***** START OF GAME *****
+
+Status of your Apollo 2 spacecraft:
+Time  : 0 seconds
+Height: 1000 feet
+Speed : 50 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  40
+
+Error! Input out of bounds!
+Enter a number between 0 and 30:  -40
+
+Error! Input out of bounds!
+Enter a number between 0 and 30:  -5
+
+Error! Input out of bounds!
+Enter a number between 0 and 30:  0
+
+Status of your Apollo 2 spacecraft:
+Time  : 1 seconds
+Height: 947.5 feet
+Speed : 55 feet/second
+Fuel  : 150 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  20
+
+Status of your Apollo 2 spacecraft:
+Time  : 2 seconds
+Height: 900 feet
+Speed : 40 feet/second
+Fuel  : 130 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  20
+
+Status of your Apollo 2 spacecraft:
+Time  : 3 seconds
+Height: 867.5 feet
+Speed : 25 feet/second
+Fuel  : 110 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  10
+
+Status of your Apollo 2 spacecraft:
+Time  : 4 seconds
+Height: 845 feet
+Speed : 20 feet/second
+Fuel  : 100 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 2 spacecraft:
+Time  : 5 seconds
+Height: 837.5 feet
+Speed : -5 feet/second
+Fuel  : 70 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 2 spacecraft:
+Time  : 6 seconds
+Height: 855 feet
+Speed : -30 feet/second
+Fuel  : 40 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+Status of your Apollo 2 spacecraft:
+Time  : 7 seconds
+Height: 897.5 feet
+Speed : -55 feet/second
+Fuel  : 10 lbs
+How much fuel do you want to burn?
+Enter a number between 0 and 30:  30
+
+**** ALERT: BURNING REMAINING FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 8 seconds
+Height: 955 feet
+Speed : -60 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 9 seconds
+Height: 1012.5 feet
+Speed : -55 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 10 seconds
+Height: 1065 feet
+Speed : -50 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 11 seconds
+Height: 1112.5 feet
+Speed : -45 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 12 seconds
+Height: 1155 feet
+Speed : -40 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 13 seconds
+Height: 1192.5 feet
+Speed : -35 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 14 seconds
+Height: 1225 feet
+Speed : -30 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 15 seconds
+Height: 1252.5 feet
+Speed : -25 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 16 seconds
+Height: 1275 feet
+Speed : -20 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 17 seconds
+Height: 1292.5 feet
+Speed : -15 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 18 seconds
+Height: 1305 feet
+Speed : -10 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 19 seconds
+Height: 1312.5 feet
+Speed : -5 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 20 seconds
+Height: 1315 feet
+Speed : 0 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 21 seconds
+Height: 1312.5 feet
+Speed : 5 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 22 seconds
+Height: 1305 feet
+Speed : 10 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 23 seconds
+Height: 1292.5 feet
+Speed : 15 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 24 seconds
+Height: 1275 feet
+Speed : 20 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 25 seconds
+Height: 1252.5 feet
+Speed : 25 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 26 seconds
+Height: 1225 feet
+Speed : 30 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 27 seconds
+Height: 1192.5 feet
+Speed : 35 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 28 seconds
+Height: 1155 feet
+Speed : 40 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 29 seconds
+Height: 1112.5 feet
+Speed : 45 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 30 seconds
+Height: 1065 feet
+Speed : 50 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 31 seconds
+Height: 1012.5 feet
+Speed : 55 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 32 seconds
+Height: 955 feet
+Speed : 60 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 33 seconds
+Height: 892.5 feet
+Speed : 65 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 34 seconds
+Height: 825 feet
+Speed : 70 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 35 seconds
+Height: 752.5 feet
+Speed : 75 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 36 seconds
+Height: 675 feet
+Speed : 80 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 37 seconds
+Height: 592.5 feet
+Speed : 85 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 38 seconds
+Height: 505 feet
+Speed : 90 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 39 seconds
+Height: 412.5 feet
+Speed : 95 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 40 seconds
+Height: 315 feet
+Speed : 100 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 41 seconds
+Height: 212.5 feet
+Speed : 105 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+Status of your Apollo 2 spacecraft:
+Time  : 42 seconds
+Height: 105 feet
+Speed : 110 feet/second
+Fuel  : 0 lbs
+**** OUT OF FUEL ****
+
+***** CONTACT *****
+Touchdown at 42.9347 seconds
+Landing velocity = : 114.673 feet/second.
+0 pounds remaining.
+
+You totaled an entire mountain!
+Your family will be notified... sooner or later.
