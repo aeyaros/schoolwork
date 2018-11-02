@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<!--========
+	Andrew Yaros
+	CS 451 Project
+	Checkers Online
+	Main game
+	======-->
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+		<title>Checkers Online</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="shortcut icon" href="favicon.png?ver=1.1">
+		<link type="text/css" rel="stylesheet" href="gamestyles.css" media="all">
+		<!-- Main script is loaded at the end of the page -->
+	</head>
+	<body>
+	<table id="thetable">
+		<tr>
+			<td class="upperpanel" colspan="2">
+				<div class="headertext">⛀ Checkers online ⛀</div>
+				<hr>
+				<div style="text-align:center;">
+					<span class="statustext">
+						<span id="ismyturn"></span>
+						Your&nbsp;color:&nbsp;
+						<span id="playercolor" style="font-weight: bold;">PLAYER COLOR HERE</span><br/>
+						Your&nbsp;User&nbsp;ID:&nbsp;
+						<span id="playerid">PLAYER ID HERE</span>
+					</span>
+				</div>
+			</td>
+		</tr><tr>
+			<td class="middlepanel" colspan="2">
+				<div id="boardcontainer">
+					<div id="boardspace">
+						<div class="squarecanvas" id="boardbackground"></div>
+						<canvas class="squarecanvas" id="Board" width="1000px" height="1000px"></canvas>
+						<canvas class="squarecanvas" id="Pieces" width="1000px" height="1000px"></canvas>
+						<canvas class="squarecanvas" id="Overlay" width="1000px" height="1000px"></canvas>
+					</div>
+				</div>
+			</td>
+			<!--<td><div class="headertext">Moves:</div>
+			<div id="movelist" readonly="true" disabled="true">
+				List of moves goes here</textarea></td>-->
+		</tr><tr>
+			<td class="bottompanel">
+				<div class="bottomcontainer">
+					<div class="footertext" id="playerdiv">Your pieces&nbsp;taken</div>
+					<hr>
+					<div class="rectanglecontainer" height="100%">
+						<canvas class="rectanglecanvas" id="PlayerPieces" width="600px" height="200px"></canvas>
+					</div>
+				</div>
+			</td>
+			<td class="bottompanel">
+				<div class="bottomcontainer">
+					<div class="footertext" id="oppodiv">Opponent's pieces&nbsp;taken</div>
+					<hr>
+					<div class="rectanglecontainer" height="100%"> 
+						<canvas class="rectanglecanvas" id="OppoPieces" width="600px" height="200px"></canvas>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+		<div id="gameOver"><div id="gameOverContainer">
+			<table width="100%" height="100%">
+			<tr>
+				<td colspan="2">
+					<div class="headertext">Game Over</div><hr>
+					<div class="footertext"id="whowon">either player or opponent wins</div>
+					<br/><div style="text-align:center; font-weight:bold;">Would you like a rematch?</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="50%"><button class="button1" id="rematchbutton" onclick="requestRematch()">Request rematch</button></td>
+				<td width="50%"><button class="button1" onclick="goHome()">Go back to main menu</button></td>
+			</tr>
+			</table>
+		</div></div>
+	</body>
+	<!-- Game script is loaded here -->
+	<script src="checkers.js"></script>
+</html>

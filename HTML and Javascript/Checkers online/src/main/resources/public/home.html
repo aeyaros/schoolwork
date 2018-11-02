@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<!--========
+	Andrew Yaros
+	CS 451 Project
+	Checkers Online
+	Home page
+	======-->
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+		<title>Checkers Online - main menu</title>
+		<link rel="shortcut icon" href="favicon.png?ver=1.1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="homestyles.css" media="all">
+		<!-- Main script is loaded at the end of the page -->
+	</head>
+	<body>
+		<table id="thetable" width="100%" height="100%">
+			<tr>
+				<td class="paddedtd" height="20%" colspan="2">
+					<div class="title">CHECKERS ONLINE</div><br/>
+					<div class="subhead">Main Menu</div><br/>
+					<hr>
+				</td>
+			</tr>
+			<tr>
+				<!--<td class="paddedtd" height="80%">
+					<div class="subhead">Active UUIDs</div>
+					<textarea id="activeIDs" placeholder="Active UUIDs will be displayed here" disabled="true"></textarea></td>-->
+				<td class="paddedtd" height="70%" colspan="2">
+					<div class="subhead">Your UUID is: <span id="myUUID">---</span></div>
+					<hr class="hline" />
+					<textarea id="oppoID" placeholder="Type a UUID here" rows="1"></textarea><br/>
+					<button class="menubutton" id="selectUUID" onclick="buttonClicked('uuid')">Join with UUID</button>
+					<hr class="hline" />
+					<button class="menubutton" id="randomUUID" onclick="buttonClicked('random')">Join random game</button>
+					<hr class="hline" />
+					<button class="menubutton" id="infomenu" onclick="goTo('about')">About this game</button>
+					<button class="menubutton" id="infomenu" onclick="goTo('history')">Version history</button>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body> 
+	<!-- Home page script is loaded here -->
+	<script src="homepage.js"></script>
+</html>

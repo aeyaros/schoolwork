@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<!-- Andrew Yaros CS451 Checkerboard prototype -->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<style>
+	
+	canvas {
+		background-color: transparent!important;
+	}
+	#boardspace {
+		margin: auto;
+		position: relative;
+	}
+	#board, #pieces, #overlay {
+		position: absolute!important;
+		width: 500px;
+		height: 500px;
+	}
+	#board {
+		z-index: 1!important;
+	}
+	#overlay {
+		z-index: 2!important;
+	}
+	#pieces {
+		z-index: 3!important;
+	}
+	
+	</style>
+	<body>
+	<table>
+		<tr>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<div id="boardspace">
+		<canvas id="board" width="800px" height="800px">
+		</canvas>
+		<canvas id="overlay" width="800px" height="800px">
+		</canvas>
+		<canvas id="pieces" width="800px" height="800px">
+		</canvas>
+	</div>
+	</body>
+	<script>
+		
+		var REDCOLOR = "#aa0000";
+		var BLACKCOLOR = "#333333";
+		var REDPIECE = "red"
+		var BLACKPIECE = "black";
+		var HIGHLIGHTCOLOR = "yellow";
+		
+		var board = document.getElementById("board");
+		var boardCtx = board.getContext("2d");
+		
+		var overlay = document.getElementById("overlay");
+		var overCtx = overlay.getContext("2d");
+		overCtx.globalAlpha = 1;		
+		
+		var isblack = true;
+		function toggleblack() {
+			if(isblack) isblack = false;
+			else isblack = true;
+		}
+		
+		var BOARD_SIZE = board.width;
+		var BOARD_DIM = 8;
+		var SQUARE_SIZE = BOARD_SIZE/BOARD_DIM;
+		
+		//x and y board coordinates, so 1 - 8
+		function getCoords(x,y) {
+			return [x*SQUARE_SIZE , y*SQUARE_SIZE];
+		}
+		
+		
+		//draw something in the square
+		
+		function drawPiece(x,y,color) {
+			var cord = getCoords(x-1,y-1);
+			var xcenter = cord[0] + (SQUARE_SIZE/2);
+			var ycenter = cord[1] + (SQUARE_SIZE/2);
+			overCtx.beginPath();
+			overCtx.arc(xcenter, ycenter, (SQUARE_SIZE/2), 0, 2 * Math.PI, false);
+			overCtx.fillStyle=color;
+			overCtx.fill();
+		}
+		
+		function removePiece(x,y) {
+			var cord = getCoords(x-1,y-1);
+			overCtx.clearRect(cord[0]*SQUARE_SIZE, cord[1]*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+		}
+		
+		//draw board
+		function drawBoard() {
+			for(i = 0; i < BOARD_DIM; i++) {
+				for(j = 0; j < BOARD_DIM; j++){
+					boardCtx.beginPath();
+					boardCtx.lineWidth="1";
+					var cord = getCoords(i,j);
+					boardCtx.rect(cord[0], cord[1], SQUARE_SIZE, SQUARE_SIZE);
+					if(isblack) boardCtx.fillStyle=BLACKCOLOR;
+					else boardCtx.fillStyle=REDCOLOR;
+					boardCtx.fill();
+					toggleblack();
+				}
+				if(BOARD_SIZE%2 == 0) toggleblack();
+			}
+		}
+		
+		//draw board
+		drawBoard();
+		
+		//draw some pieces
+		drawPiece(1, 8, REDPIECE);
+		drawPiece(2, 7, BLACKPIECE);
+		drawPiece(3, 6, REDPIECE);
+		drawPiece(4, 5, BLACKPIECE);
+		drawPiece(5, 4, REDPIECE);
+		drawPiece(6, 3, BLACKPIECE);
+		drawPiece(7, 2, REDPIECE);
+		drawPiece(8, 1, BLACKPIECE);
+		
+		removePiece(8, 1);
+		
+		//overCtx.beginPath();
+		//overCtx.rect(200, 399, 34, 234);
+		//overCtx.fillStyle=HIGHLIGHTCOLOR;
+		//overCtx.fill();
+		//setTimeout(overCtx.clearRect(200, 399, 36, 232),500);
+		
+		
+		</script>
+</html>

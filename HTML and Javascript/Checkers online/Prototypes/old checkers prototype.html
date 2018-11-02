@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.body {
+			background-color: #dedede;
+		}
+	
+		#theboard {
+			width: 800px;
+			height: 800px;
+		}
+		.square {
+			width: 100px;
+			height: 100px;
+		}
+		.redsquare {
+			background-color: red!important;
+		}
+		.blacksquare {
+			background-color: black!important;
+		}
+		
+	</style>
+	<script>
+	
+	//nxn grid
+	
+	
+	//piece objects
+	
+	//function to draw pieces
+	
+	
+	
+	//draw an 8x8 checkerbaord
+	const BOARD_SIZE = 8;
+	
+	//helper variable
+	var isBlack = true;
+	
+	function toggleDrawColor() {
+		if(isBlack == true) isBlack = false;
+		else isBlack = true;
+	}
+	
+	function drawBoard() {
+		var boardTbl = "<table>" //string for table html
+		for(i = 0; i < BOARD_SIZE; i++) {
+			boardTbl += "<tr>"; //the current row
+			for (j = 0; j < BOARD_SIZE; j++) {
+				//draw td element
+				boardTbl += "<td class=\"square ";
+				
+				//set color of current piece
+				if(isBlack) boardTbl += "blacksquare";
+				else boardTbl += "redsquare";
+				
+				//toggle draw color for next piece
+				toggleDrawColor();
+				boardTbl += "\" x=\"" + toString(i)+ "\" y=\"" + toString(j) + "\"></td>";
+			}
+			//end current row
+			boardTbl += "</tr>"
+			//if the board size is even, toggle color again, so rows are shifted
+			if(BOARD_SIZE % 2 == 0) toggleDrawColor();
+		}
+		//end table
+		boardTbl += "</table>"
+		
+		document.getElementById("theboard").innerHTML = boardTbl;
+	}
+	
+	
+	
+	</script>
+	<body>
+	
+	<div id="theboard">
+	
+	</div>
+	<script>
+	drawBoard();
+	</script>
+	</body>
+</html>
