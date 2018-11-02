@@ -1,0 +1,6 @@
+Part four of the homework assignment may be very simple of very complicated depending upon whether or not you took our advice.
+The assignment is to ensure that there is no reference to a test, correct answer or grading in any code the survey sees.
+If your code already is written this way, simply submit a sentence to learn stating my survey code contains no references to a test.
+If you are wrong and your code does have references, you will lose points for each reference to inappropriate code. 
+Your code still code still has to function.
+All previous deliverables must be met.

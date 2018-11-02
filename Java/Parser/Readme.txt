@@ -1,0 +1,13 @@
+Andrew Yaros
+CS 360
+Programming Assignment 1 parts 3 and 4
+
+I made a bash script which runs the makefiles in both the q3 and q4 directories. The makefiles can be run separately in their respective directories; the targets are the default "make" and "make clean." These parts were written in Java (using IntelliJ IDEA) on macOS 10.13. They seem to be working properly on tux.
+
+Part 3 was a parse tree for balanced parenthesis. All code is included in the main class except for the node/tree object, which is in a separate class file. The code is, of course, based on the 11.6 section from FOCS, although a number of differences exist due to Java's lack of pointers. The tree is modified from the one I wrote in part 4; it is effectively just a binary tree, although an ArrayList is used to hold the children. An algorithm from Data Structures and Algorithms (Alfred Aho) was used to get the height of a tree.
+
+Part 4 is a table based parser based on FOCS section 11.7. I created a couple different classes for this; a parseToken class, for each token in the grammar, and a simple production class (with a leftside token and a list of right side tokens). Additionally, a node class is used for constructing the parse tree. Each parseToken can be either terminal or non-terminal (I used a boolean).
+
+The parse tree itself is basically constructed from three different arrays; a set of all the terminal tokens (the symbols), a set of all the non-terminal tokens, and a 2D array of numbers, as seen in figure 11.32; terminals represent the j; non-terminals represent the i coordinate. A function, productionNumberLookup, takes in a terminal and a non-terminal token and returns the corresponding production number, if applicable. A string parsing function exists to convert an input string to a character array, which is then parsed character by character. A switch statement selects the appropriate tokens, both terminal and non-terminal, to put into a stack, which is then returned; this becomes the remaining input function.
+
+Finally, a driver function actually carries out the functions of the parser. It takes the remainingInput stack, and sets up a new stack for the parser with <S>. The book follows the process as laid out in the book; if the current item in the stack is non-terminal, we take it and the current lookahead and get a production; these replace the non-terminal on a stack and also become the children of the left-most non-terminal leaf on the parse tree (which should represent the current non-terminal token). If the item is terminal, we check to make sure it matches the current lookahead, and if they match, it is popped from the stack and we get the next lookahead.
