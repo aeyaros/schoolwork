@@ -1,0 +1,65 @@
+/* 
+========================================
+Team 94 CI 103 Spring 2018 Final Project
+========================================
+Andrew Yaros
+Jacob Proctor
+Jung Ho Baek
+Riley Faulkner
+========================================
+John Fry's Food Truck Extravaganza!
+Editor CSS file
+========================================
+*/
+
+html, body {
+	height: 99%;
+	width: 99%;
+}
+body {
+	background-color: #fafafa;
+	font-size: 11pt;
+	font-family: sans-serif;
+}
+#mainbody {
+	width: 100%;
+	height: 100%;
+}
+#display{
+	height:100%;
+}
+#control {
+	
+}
+.messageArea, #displayArea {
+	border: 1px solid #dddddd;
+	overflow: auto;
+}
+
+.messageArea{
+	width: 100%;
+	background-color: #ffeedd;
+	height: 32px;
+}
+#displayArea{
+	width: 384px;
+	background-color: #eeeeee;
+	height: 100%;
+}
+
+#additionTable {
+	overflow-x: auto;
+	border: none;
+	vertical-align: bottom;
+}
+.addTableTextArea {
+	width: 140px;
+	resize: none;
+}
+.addTableTextArea2 {
+	width: 90%;
+	resize: none;
+}
+ .addTableCell {
+	vertical-align: bottom;
+} 

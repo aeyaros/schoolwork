@@ -1,0 +1,450 @@
+<!-- aey - firebase scripts -->
+		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-firestore.js"></script>
+		
+		
+		<!--<script>
+			// Initialize Firebase
+			// TODO: Replace with your project's customized code snippet
+			var config = {
+				apiKey: "AIzaSyD0JmamdWMQFN0eI-J45TKS3MqVk8_zAzk",
+				authDomain: "truck-info.firebaseapp.com",
+				databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+				projectId: "truck-info",
+			};
+			firebase.initializeApp(config);
+		</script>-->
+	
+		
+		/* dont delete this*/
+		
+		/* aey - SETUP FIREBASE */   /*
+		const firebase = require("firebase");
+		// Required for side-effects
+		require("firebase/firestore");
+		
+		firebase.initializeApp({
+			apiKey: 'AIzaSyD0JmamdWMQFN0eI-J45TKS3MqVk8_zAzk',
+			authDomain: 'truck-info.firebaseapp.com',
+			projectId: 'truck-info'
+		});
+
+		// Initialize Cloud Firestore through Firebase
+		var db = firebase.firestore();
+		
+		
+	*/
+		
+		/*
+		function createT() {
+			db.collection("users").add({
+				name: doc.getElementById("name"),
+				address: doc.getElementById("addr"),
+				location: doc.getElementById("loca"),
+				cuisine: doc.getElementById("cuis"),
+				lat: doc.getElementById("lat"),
+				lng: doc.getElementById("lng")
+			})
+			.then(function(docRef) {
+				console.log("Document written with ID: ", docRef.id);
+			})
+			.catch(function(error) {
+				console.error("Error adding document: ", error);
+			});
+		}*/
+		//not necessary since we are forgetting about node.js but dont delete yet
+		//var theURL = "http://localhost:8080/";
+
+		//	   (doc => {
+		//		 	if(!doc.exists) {
+		//				console.log("Truck with id " + id + " was not found");
+		//			} else {
+		//				console.log(doc.data());
+		//				res.send(doc.data());
+		//			}
+		//		})
+
+		//	db.collection("trucks").get().then((querySnapshot) => {
+		//		querySnapshot.forEach((doc) => {
+		//			console.log(`${doc.id} => ${doc.data()}`);
+		//		});
+		//	});
+			
+			/*
+			newRL = theURL + "getTruck" //create urk
+			$.ajax({
+				type: "GET",
+				url: newRL,
+				contentType: "text/plain",
+				data: id,
+				dataType: 
+			});*/
+	//	}		
+		
+		
+		
+		
+		
+		//data fields for each truck
+		//strings:
+			//title
+			//location - description of where it is
+			//address - a street address
+			//price-range - calculated based on menu
+		//???cuisine - what kind of food, also opposite/adjacent/hypotenuse
+		
+		//menu: reference to the menu
+		//create html 
+		
+		//coord
+		
+		//menus will have 0 t
+		
+		
+		
+		
+		
+		//elementName.innerHTML = truck.name;
+		//elementInfo.innerHTML = truck.info;
+		//elementInfoPanel.innerHTML = "Info for " + truck.name;
+		//truckTitle.innerHTML = truck.title;
+		//truckAddress.innerHTML = truck.address;
+		//priceRange.innerHTML = truck.priceRange;
+		//cuisine.innerHTML = truck.cuisine;
+		
+		//Menu.innerHTML = ;
+		//times.innerHTML = "";
+		/*
+		function getTruckDoc(id) {
+			var truck = db.collection("trucks").doc(id);
+			
+			var getTruck = truck.get().then(function(doc) {
+				if(doc.exists) {
+					return doc.data();
+				} else {
+					return -1; //doesnt exist
+				}
+			}).catch(function(error) {
+				return -2; //other error
+			});*/
+			
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+	/*
+			var elementName = document.getElementById("truckName");
+			var elementInfo = document.getElementById("info");
+			var elementInfoPanel = document.getElementById("panelText");
+
+			//Elements in infopanel table
+			var truckTitle = document.getElementById("truckTitle");
+			var truckAddress = document.getElementById("truckAddress");
+			var priceRange = document.getElementById("priceRange");
+			var cuisine = document.getElementById("cuisine");
+			var Menu = document.getElementById("Menu");
+			var times = document.getElementById("times");
+*/
+				<!-- this namesection thing is old, from the prior demo
+				<div id="nameSection">
+				<p id="truckName">Hello! Click the Markers Above!</p>
+				</div>-->	
+
+
+		<!-- from maps demo
+		
+			<div id="infoOverlay">
+			<p id="info"> </p>
+		</div>
+		-->
+		<!-- This part I haven't got working. Just want to re-center map on click. -->
+		<!--
+		<<div id="truckList">
+				<p id='marker1List'>1. Halal on Market & 33rd</p>
+				<p id='marker2List'>2. Halal on Lancaster & 34th</p>
+				<p id='markerPetesList'>3. Pete's Little Lunchbox</p>
+				<p id='markerPaperList'>4. PaperMill- Home of the Spurrito</p>
+		</div>
+		
+		<button id="toggleList" onclick="toggleList()">Truck List</button>
+		
+		-->
+		
+		
+		
+		
+		<!--
+
+
+		
+		
+		
+		
+		
+		
+		//Functions when clicking on marker, ie updating html element contents, orienting the map, showing the info panel
+		/*
+		MARKERNAME.addListener("click", function() {
+			map.setZoom(17.5); //how zoomed in
+			map.setCenter(MARKERNAME.getPosition()); //center the map
+			elementName.innerHTML = "";
+			elementInfo.innerHTML = "";
+			elementInfoPanel.innerHTML = "";
+			truckTitle.innerHTML = "";
+			truckAddress.innerHTML = "";
+			priceRange.innerHTML = "";
+			cuisine.innerHTML = "";
+			Menu.innerHTML = "";
+			times.innerHTML = "";
+			document.getElementById("infoPanel").style.opacity = ".7"; //set opacity of menu
+			document.getElementById("infoPanel").style.pointerEvents = "auto"; //makes info clickable, another function is linked to button that when clicked, opacity 0, makes info clickable when visible
+		});
+		*/
+			//Functions when clicking on marker, ie updating html element contents, orienting the map, showing the info panel
+			/*
+			MARKERNAME.addListener("click", function() {
+				map.setZoom(17.5); //how zoomed in
+				map.setCenter(MARKERNAME.getPosition()); //center the map
+				elementName.innerHTML = "";
+				elementInfo.innerHTML = "";
+				elementInfoPanel.innerHTML = "";
+				truckTitle.innerHTML = "";
+				truckAddress.innerHTML = "";
+				priceRange.innerHTML = "";
+				cuisine.innerHTML = "";
+				Menu.innerHTML = "";
+				times.innerHTML = "";
+				document.getElementById("infoPanel").style.opacity = ".7"; //set opacity of menu
+				document.getElementById("infoPanel").style.pointerEvents = "auto"; //makes info clickable, another function is linked to button that when clicked, opacity 0, makes info clickable when visible
+			});
+			*/
+
+
+/*
+				//Marker coordinates
+				//var  = { lat: , lng: };
+				var truck1 = { lat: 39.955713, lng: -75.189507 };
+				var truck2 = { lat: 39.957311, lng: -75.191119 };
+				var petesLunch = { lat: 39.9571257, lng: -75.1891027 };
+				var paperMill = { lat: 39.955806, lng: -75.190472 };
+*/
+
+		
+				
+				
+				
+				
+				 //original markers========================================================
+				/*
+				
+				var marker = new google.maps.Marker({
+					position: truck1,
+					map: map,
+					title: "Rileys"
+				});
+				var marker2 = new google.maps.Marker({
+					position: truck2,
+					map: map,
+					title: "Petes"
+				});
+				var petesMarker = new google.maps.Marker({
+					position: petesLunch,
+					map: map,
+					title: "Pete's Little Lunchbox"
+				});
+				var paperMarker = new google.maps.Marker({
+					position: paperMill,
+					map: map,
+					title: "PaperMill- Home of the Spurrito"
+				});
+
+*/
+
+
+
+				//Functions when clicking on marker, ie updating html element contents, orienting the map, showing the info panel
+				/*
+				MARKERNAME.addListener("click", function() {
+					map.setZoom(17.5);
+					map.setCenter(MARKERNAME.getPosition());
+					elementName.innerHTML = "";
+					elementInfo.innerHTML = "";
+					elementInfoPanel.innerHTML = "";
+					truckTitle.innerHTML = "";
+					truckAddress.innerHTML = "";
+					priceRange.innerHTML = "";
+					cuisine.innerHTML = "";
+					Menu.innerHTML = "";
+					times.innerHTML = "";
+					document.getElementById("infoPanel").style.opacity = ".7";
+					document.getElementById("infoPanel").style.pointerEvents = "auto";
+				});
+				*/
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				/* //original listeners============================================
+				
+				marker.addListener("click", function() {
+					map.setZoom(17.5);
+					map.setCenter(marker.getPosition());
+					elementName.innerHTML = "Halal Truck on 33rd and Market";
+					elementInfo.innerHTML = "Address: 33rd & Market";
+					elementInfoPanel.innerHTML = "Info for Clicked Point1";
+					truckTitle.innerHTML = "Halal Truck";
+					truckAddress.innerHTML = "33rd & Market";
+					priceRange.innerHTML = "$5.00 - $6.00 with Drink";
+					cuisine.innerHTML = "Halal";
+					Menu.innerHTML = "blankfornow";
+					times.innerHTML = "9AM - 10PM";
+					document.getElementById("infoPanel").style.opacity = ".7";
+					document.getElementById("infoPanel").style.pointerEvents = "auto";
+				});
+				
+				marker2.addListener("click", function() {
+					map.setZoom(17.5);
+					map.setCenter(marker2.getPosition());
+					elementName.innerHTML = "Halal Truck on 34th and Market";
+					elementInfo.innerHTML = "Address: 34th & Market";
+					elementInfoPanel.innerHTML = "Info for Clicked Point2";
+					truckTitle.innerHTML = "Halal Truck";
+					truckAddress.innerHTML = "34th & Market";
+					priceRange.innerHTML = "$5.00 - $6.00 with Drink";
+					cuisine.innerHTML = "Halal";
+					Menu.innerHTML = "blankfornow";
+					times.innerHTML = "9AM - 10PM";
+					document.getElementById("infoPanel").style.opacity = ".7";
+					document.getElementById("infoPanel").style.pointerEvents = "auto";
+				});
+
+				petesMarker.addListener("click", function() {
+					map.setZoom(17.5);
+					map.setCenter(petesMarker.getPosition());
+					elementName.innerHTML = "Pete's Little Lunchbox";
+					elementInfo.innerHTML = "Address: 3300 Arch Street";
+					elementInfoPanel.innerHTML = "Info for Pete's";
+					truckTitle.innerHTML = "Pete's Little Lunchbox";
+					truckAddress.innerHTML = "3300 Arch St.";
+					priceRange.innerHTML = "$1.50 - $5.50";
+					cuisine.innerHTML = "Breakfast";
+					Menu.innerHTML = "blankfornow";
+					times.innerHTML = "6AM - 4PM";
+					document.getElementById("infoPanel").style.opacity = ".7";
+					document.getElementById("infoPanel").style.pointerEvents = "auto";
+				});
+
+				paperMarker.addListener("click", function() {
+					map.setZoom(17.5);
+					map.setCenter(paperMarker.getPosition());
+					elementName.innerHTML = "PaperMill- Home of the Spurrito";
+					elementInfo.innerHTML = "Address: 3320 Market Street";
+					elementInfoPanel.innerHTML = "Info for PaperMill";
+					truckTitle.innerHTML = "PaperMill- Home of the Spurrito";
+					truckAddress.innerHTML = "3320 Market Street";
+					priceRange.innerHTML = "$8.00-$9.00";
+					cuisine.innerHTML = "Lunch, Specialty Burritos";
+					Menu.innerHTML = "blankfornow";
+					times.innerHTML = "9AM - 5:30PM";
+					document.getElementById("infoPanel").style.opacity = ".7";
+					document.getElementById("infoPanel").style.pointerEvents = "auto";
+				});
+				
+				*/
+				
+			/*
+			//function for the hide panel button, which also allows user to click through the now-hidden panel
+			function hidePanel() {
+				document.getElementById("infoPanel").style.opacity = "0";
+				document.getElementById("infoPanel").style.pointerEvents = "none";
+			}
+
+			function toggleList(){
+					if (document.getElementById("truckList").style.opacity === "0"){
+							document.getElementById("truckList").style.opacity = ".7";
+					} else {
+							document.getElementById("truckList").style.opacity = "0";}
+			}
+			*/	
+
+
+
+
+
+
+
+
+
+		
+		
+		/* ---------------stuff from map demo ------------------------ */
+		#nameSection {
+		padding: 30px;
+		background-color: #17263c;
+		width: 75%;
+		margin: auto;
+		margin-top: 15px;
+		}
+		
+		#truckName {
+			font-size: 24px;
+			margin-top: 20px;
+			margin: auto;
+			text-align: center;
+			width: 50%;
+			color: #ffe9b3;
+		}
+		
+		#infoOverlay {
+			position:absolute;
+			width:200px;
+			height:50px;
+			font-size: 16px;
+			text-align: center;
+			margin: auto;
+			background-color: #fffffe;
+			opacity: .7;
+			color:#374454;
+			bottom:21.7%;
+			left:11%;
+		}
+		#infoPanel {
+			position:absolute;
+			width:320px;
+			height:65%;
+			font-size: 16px;
+			text-align: center;
+			margin: auto;
+			background-color: #fffffe;
+			opacity: 0;
+			color:#374454;
+			bottom:28%;
+			left:11%;
+			pointer-events: none;
+		}
+
+		#hideButton {
+			position:absolute;
+			top: 95%;
+			left: 35%;
+		}
+
+
+
+		#addData {
+			width: 100%;
+			height: 20%; /* aey - height of temporary area to add data */
+		}
+
