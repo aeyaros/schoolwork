@@ -30,17 +30,10 @@
 				<td class="paddedtd" height="70%" colspan="2">
 					<div class="subhead">Your UUID is: <span id="myUUID">---</span></div>
 					<hr class="hline" />
-					<button class="menubutton" id="randomUUID" onclick="buttonClicked('random')">Join random game</button>
+					<textarea id="oppoID" placeholder="Type a UUID here" rows="1"></textarea><br/>
+					<button class="menubutton" id="selectUUID" onclick="buttonClicked('uuid')">Join with UUID</button>
 					<hr class="hline" />
-                                        <!-- joining games by UUID is not complete; it works, but it isn't handled in a user friendly way right now
-                                                textarea and button are currently disabled
-                                         -->
-                                        <textarea id="oppoID" disabled placeholder="Type a UUID here (currently disabled)" rows="1"></textarea><br/>
-                                        <!-- to enable incomplete join game functionality, add attribute:
-                                                onclick="buttonClicked('uuid')"  
-                                                to the "Join with UUID" button and remove the disable attribute from the button and the textarea tag
-                                        -->
-                                        <button class="menubutton" id="selectUUID" disabled>Join with UUID (Currently disabled)</button>
+					<button class="menubutton" id="randomUUID" onclick="buttonClicked('random')">Join random game</button>
 					<hr class="hline" />
 					<button class="menubutton" id="infomenu" onclick="goTo('about')">About this game</button>
 					<button class="menubutton" id="infomenu" onclick="goTo('history')">Version history</button>
