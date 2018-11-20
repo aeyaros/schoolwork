@@ -1,16 +1,6 @@
-/* 
-========================================
-Team 94 CI 103 Spring 2018 Final Project
-========================================
-Andrew Yaros
-Jacob Proctor
-Jung Ho Baek
-Riley Faulkner
-========================================
-John Fry's Food Truck Extravaganza!
-Editor Javascript code file
-========================================
-*/
+/*========================================================
+Andrew Yaros - John Fry's Food Truck Extravaganza - Editor
+========================================================*/
 
 // aey - Initialize Firebase
 var config = {
@@ -51,7 +41,7 @@ var blankTruckObject = {
 		"open": {"hour":"00", "minute":"00"},
 		"closed": {"hour":"00", "minute":"00"}
 	},
-	"menu": [0]/* contains menu items */
+	"menu": []/* contains menu items */
 };
 
 var blankFoodItemObject = {
@@ -440,12 +430,11 @@ function printTrucks() {
 	}
 }
 
-//aey - output text to the gray display area
+
 function outputToDisplay (string) {
 	$("#displayArea").html(string);
 }
 
-//aey - output text to the orange status box
 function outputMessage (string) {
 	$(".messageArea").html(string);
 }
