@@ -1,0 +1,37 @@
+/*
+Andrew Yaros - CS 451
+Checkers Online
+Stylesheet for additional pages
+*/
+html {
+	height: 100%;
+	background-color: #f8f8f8;
+	background-position: fixed;
+	/*background-image: linear-gradient(to bottom, #f4f4f4, white);*/
+} body {
+	font-family: "Arial",sans-serif;
+} #thetable{
+	margin: auto;
+	max-width: 600px;
+	table-layout: fixed;
+} .title {
+	font-size: 19pt;
+	font-weight: bold;
+} .subhead {
+	font-size: 15pt;
+	font-weight: bold;
+} .hline {
+	margin-top: 10%;
+	margin-bottom: 10%;
+} .backbutton {
+	background-color: #ffffff;
+	font-size: 12pt;
+	padding: 10px;
+	width: 256px;
+	margin:20px;
+	border-radius: 30px;
+	border: 2px solid #dddddd;
+} .backbutton:hover { 
+	background-color: #444444;
+	color: white;
+} 
