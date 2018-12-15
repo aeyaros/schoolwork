@@ -445,7 +445,6 @@ func arbiter(N int, forks *Chans, forkArray []int) {
 }
 
 //main driver
-//sets stuff up
 func main() {
 	fmt.Println()
 	fmt.Println("-------------------------------------------")
