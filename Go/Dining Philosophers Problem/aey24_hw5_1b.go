@@ -412,18 +412,18 @@ each fork has a pointer to the channel the fork uses to communicate
 
 Andrew's magic fork handling protocol (RFC 31337)
 -------------------------------------------------
-phil thread sends messages via array of fork channels
-arbitrator is listening and recieves a request:
-	1 to pick up a fork
-	returns:
-		1 if success
-		0 if fail
-		2 if fork already owned
-	2 to put down a fork
-	returns:
-		1 if success
-		0 if fail
-		2 if fork already down
+Philosopher threads send messages via fork channels.
+Arbiter is listening and receives a request from a philosopher thread:
+
+1 to pick up a fork; this returns:
+	1 if success
+	0 if fail
+	2 if fork already owned
+
+2 to put down a fork; this returns:
+	1 if success
+	0 if fail
+	2 if fork already down
 */
 func arbiter(N int, forks *Chans, forkArray []int) {
 	//for messages received
