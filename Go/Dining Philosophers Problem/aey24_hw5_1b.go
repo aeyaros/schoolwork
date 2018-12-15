@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-/*      N philosophers sitting at circular table
+/* N philosophers sitting at circular table
 bowl of noodles in center to share
 each has a plate and a fork
 states:
@@ -27,10 +27,6 @@ states:
 	9	enlightened eating
 k% chance of entering enlightened state can pick any available fork
 s% chance of going into sleep state at any other time      */
-
-//turn debugging on (true) and off (false)
-//turning on will do lots of printing
-const debugme = false
 
 //report status
 //n = thread number
@@ -65,13 +61,6 @@ func talk(n int, s int) {
 //str = status string
 func talkCustom(n int, str string) {
 	fmt.Printf("Philosopher #%2d says \"%s\" \n", n, str)
-}
-
-//debug printing function
-func printdb(str string) {
-	if debugme {
-		fmt.Print(str + " ")
-	}
 }
 
 func printForks(arr []int, size int) {
@@ -267,10 +256,8 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 
 	//forks for enlightened state
 	var efork1, efork2 int
-	printdb("p1")
 	//main loop for state machine
 	for {
-		printdb("p2")
 		//get random number between 0 and 99
 		tempRand = randInt(percentMax)
 
@@ -288,19 +275,14 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 				state = 6 //sleep eating
 				talk(number, state)
 			}
-			printdb("p3")
 		} else if tempRand < kProb && state == 1 {
 			//k% chance of enlightened state while thinking
 			state = 7 //enlightened thinking
 			talk(number, state)
-			printdb("p4")
 		}
-		printdb("p5")
 		//if thinking, nudge neighbors
 		if state == 1 || state == 7 {
-			//nudge  neighbor
-			printdb("p6")
-
+			//nudge neighbor
 			var send msg
 			send.owner = number
 			send.code = 1
@@ -309,18 +291,14 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			case phils.array[n1] <- send:
 				talkCustom(number, "Nudging philosopher #" + strconv.Itoa(n1))
 			default:
-				printdb("p7")
 			}
 			//nudge right neighbor
 			select {
 			case phils.array[n2] <- send:
 				talkCustom(number, "Nudging philosopher #" + strconv.Itoa(n2))
 			default:
-				printdb("p8")
 			}
-			printdb("p9")
 		}
-		printdb("p10")
 		//depending on state, do different stuff
 		switch state {
 		/* regular states */
@@ -334,9 +312,7 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			}
 		case 2: //hungry
 			//try to pick up forks;
-			printdb("p11")
 			response = takeTwoForks(f1,f2,forks)
-			printdb("p12")
 			if response == 1 {
 				state = 3 //now eating
 				talk(number, state)
@@ -344,34 +320,26 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 				talkCustom(number, "Tried picking up forks, still hungry...")
 			}
 		case 3: //eating
-			printdb("p13")
 			response = eat(f1, f2, forks)
-			printdb("p14")
 			if response == 1 {
 				state = 1 //go back to thinking
 				talk(number, state)
 			}
 		/* sleep states; these are a tad redundant but oh well */
 		case 4: //sleep thinking, wait for nudged
-			printdb("p16")
 			response = waitForNudge(number, n1, n2, phils)
-			printdb("p17")
 			//go back to thinking
 			state = 1
 			talkCustom(number, "I was nudged awake by philosopher #" + strconv.Itoa(response))
 			talk(number,state)
 		case 5: //sleep hungry, wait for nudged
-			printdb("p18")
 			response = waitForNudge(number, n1, n2, phils)
 			//go back to hungry
-			printdb("p19")
 			state = 2
 			talkCustom(number, "I was nudged awake by philosopher #" + strconv.Itoa(response))
 			talk(number,state)
 		case 6: //sleep eating, wait for nudged
-			printdb("p20")
 			response = waitForNudge(number, n1, n2, phils)
-			printdb("p21")
 			//go back to eating
 			state = 3
 			talkCustom(number, "I was nudged awake by philosopher #" + strconv.Itoa(response))
@@ -392,18 +360,14 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			state = 9
 			talk(number, state)
 		case 9: //enlightened eating
-			printdb("p22")
 			eat(efork1, efork2, forks)
-			printdb("p23")
 			state = 1
 			talk(number, state)
 		default: //exit the loop
-			printdb("p24")
 			return
 		}
 		//reset response value!
 		response = -1
-		printdb("p25")
 	}
 	//slow stuff down a bit
 	time.Sleep(time.Millisecond*1000)
@@ -437,12 +401,8 @@ func arbiter(N int, forks *Chans, forkArray []int) {
 		if cnt % 200000 == 0 {
 			printForks(forkArray, N)
 		}
-		//printdb("a1")
-		//printForks(forkArray, N)
-		//printForks(forkArray, N)
 		//check each fork
 		for i := 0; i < N; i++ {
-			//printdb("a2")
 			//fmt.Println("Arbiter checking fork #" + strconv.Itoa(i))
 			select {
 			case receive = <-forks.array[i]: //get a message from the fork's channel
@@ -454,49 +414,33 @@ func arbiter(N int, forks *Chans, forkArray []int) {
 			//build message to send back
 			var send msg
 			send.owner = -1 //arbitrator
-			printdb("a2")
 			if receive.code == 1 { //if we received a signal to pick up the fork
-				printdb("a3")
 				//is fork unowned?
 				if forkArray[i] == -1 {
-					printdb("a4")
 					//set owner of fork to requester
 					forkArray[i] = receive.owner
 					send.code = 1 //success
 				} else if forkArray[i] == receive.owner { //if fork is owned by sender already
-					printdb("a5")
 					send.code = 2 //already owned
 				} else { //cannot pickup
-					printdb("a6")
 					send.code = 0 //failure
 				}
-				printdb("a7")
 				forks.array[i] <- send
-				printdb("a8")
-
 			} else if receive.code == 2 { //if signal to put down fork
-				printdb("a9")
 				//is fork already down?
 				if forkArray[i] == -1 {
-					printdb("a10")
 					send.code = 2
 				} else if forkArray[i] == receive.owner {
-					printdb("a11")
 					//if signal sent by owner of fork
 					//then we can put it down
 					forkArray[i] = -1 //set as unowned
 					send.code = 1 //success
 				} else { //error
-					printdb("a12")
 					send.code = 0 //failure
 				}
-				printdb("a13")
 				forks.array[i] <- send
-				printdb("a14")
 			} //else do nothing
-			printdb("a15")
 		}
-		//printdb("a16")
 	}
 }
 
