@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-/* N philosophers sitting at circular table
+/*      N philosophers sitting at circular table
 bowl of noodles in center to share
 each has a plate and a fork
 states:
@@ -109,13 +109,18 @@ func pickUpFork(number int, forks *Chans) int {
 }
 
 func takeTwoForks(f1 int, f2 int, forks *Chans) int {
-	var response = pickUpFork(f1, forks) //pick up first fork
-	if response == 1 || response == 2 {
-		response = pickUpFork(f2, forks) //pick up second fork
-		if response == 1 || response == 2 {}
-			return 1
+	var response int
+	for {
+		response = pickUpFork(f1, forks) //pick up first fork
+		if response == 1 || response == 2 {
+			for {
+				response = pickUpFork(f2, forks) //pick up second fork
+				if response == 1 || response == 2 {
+					return 1
+				}
+			}
+		}
 	}
-	return 0
 }
 
 //pass in values as pointers, change them
@@ -215,12 +220,15 @@ func waitForNudge(number int, n1 int, n2 int, phils *Chans) int {
 //left fork is, generally, n-1th fork
 //right fork is the nth fork
 //phils channels are for nudging
-func Phil(number int, N int, forks *Chans, phils *Chans) {
+func Phil(number int, N int, forks *Chans, phils *Chans, eaten1 *int, eaten2 *int) {
 	if number >= N || number < 0 { return } //check number argument
 
 	//initialize state to thinking
 	var state int = 1
 	talkCustom(number, "Hello! I'm thinking.")
+
+	*eaten1 = 0
+	*eaten2 = 0
 
 	//stuff for random state changes
 	const percentMax int = 99	//ints from 0 - 99 used for percentages
@@ -299,6 +307,7 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			default:
 			}
 		}
+		printdb("p10")
 		//depending on state, do different stuff
 		switch state {
 		/* regular states */
@@ -321,10 +330,9 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			}
 		case 3: //eating
 			response = eat(f1, f2, forks)
-			if response == 1 {
-				state = 1 //go back to thinking
-				talk(number, state)
-			}
+			*eaten1++
+			state = 1 //go back to thinking
+			talk(number, state)
 		/* sleep states; these are a tad redundant but oh well */
 		case 4: //sleep thinking, wait for nudged
 			response = waitForNudge(number, n1, n2, phils)
@@ -357,6 +365,7 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 			talkCustom(number, "Taking two available forks")
 			//take any two available forks
 			takeAnyTwoForks(N, &efork1, &efork2, forks)
+			*eaten2++
 			state = 9
 			talk(number, state)
 		case 9: //enlightened eating
@@ -376,33 +385,27 @@ func Phil(number int, N int, forks *Chans, phils *Chans) {
 /* arbiter - takes pointer to array of forks
 each fork has a pointer to the channel the fork uses to communicate
 
-Andrew's magic fork handling protocol (RFC 31337)
--------------------------------------------------
-Philosopher threads send messages via fork channels.
-Arbiter is listening and receives a request from a philosopher thread:
-
-1 to pick up a fork; this returns:
-	1 if success
-	0 if fail
-	2 if fork already owned
-
-2 to put down a fork; this returns:
-	1 if success
-	0 if fail
-	2 if fork already down
+	Andrew's magic fork handling protocol (RFC 31337)
+	-------------------------------------------------
+	Philosopher thread sends signals:
+		1 to pick up a fork; arbiter responds:
+			1 if success
+			0 if fail
+			2 if fork already owned
+		2 to put down a fork; arbiter responds:
+			1 if success
+			0 if fail
+			2 if fork already down
 */
 func arbiter(N int, forks *Chans, forkArray []int) {
 	//for messages received
 	var receive msg
-	var cnt uint64 = 0
+	//var cnt uint64 = 0
 	//keep arbitrating until program exits
 	for {
-		cnt++
-		if cnt % 200000 == 0 {
-			printForks(forkArray, N)
-		}
 		//check each fork
 		for i := 0; i < N; i++ {
+			//printdb("a2")
 			//fmt.Println("Arbiter checking fork #" + strconv.Itoa(i))
 			select {
 			case receive = <-forks.array[i]: //get a message from the fork's channel
@@ -479,15 +482,24 @@ func main() {
 	for it to keep track of forks  */
 	go arbiter(N, &forkChannels, forkArray)
 	time.Sleep(100 * time.Millisecond)
+	
+	var eaten1Array = make([]int, N) //array for number of times eaten normally
+	var eaten2Array = make([]int, N) //array for number of times eaten enlightened
 
 	fmt.Println("Starting philosopher threads:")
 	fmt.Println()
+
 	//create a bunch of philosopher threads
 	for i := 0; i < N; i++ {
-		go Phil(i, N, &forkChannels, &phils)
+		go Phil(i, N, &forkChannels, &phils, &eaten1Array[i], &eaten2Array[i])
 	}
-
-	//put main thread to sleep
-	//when sleep stops, program ends
+	
+	//put main thread to sleep for duration of program
 	time.Sleep(30 * time.Second) //10 min
+	
+	//finish by printing how many times the philosopher has eaten
+	fmt.Println("Statistics:")
+	for i := 0; i < N; i++ {
+		fmt.Printf("    Thread %d ate %d times and enlightened ate %d times.\n", i, eaten1Array[i], eaten2Array[i])
+	}
 }
