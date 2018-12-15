@@ -19,10 +19,12 @@ states:
 	1	think
 	2	hungry
 	3	eat
-	4	sleep
-	5	enlightened thinking
-	6	enlightened hunger
-	7	enlightened eating
+	4	sleep thinking
+	5	sleep hunger
+	6	sleep eating
+	7	enlightened thinking
+	8	enlightened hunger
+	9	enlightened eating
 k% chance of entering enlightened state can pick any available fork
 s% chance of going into sleep state at any other time      */
 
