@@ -492,4 +492,3 @@ func main() {
 	//when sleep stops, program ends
 	time.Sleep(30 * time.Second) //10 min
 }
-
