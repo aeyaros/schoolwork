@@ -1,5 +1,6 @@
-Socialite readme file
------------
++-----------------------+
+| Socialite readme file |
++-----------------------+
 
 This was a simple homework assignment for CS 172 at Drexel where I
 created a program in C++ which generates simple "profile pages" for an 
