@@ -1,0 +1,11 @@
+Info for Socialite ID: bFranklin
+======================
+           First name: Benjamin
+            Last name: Franklin
+    Picture file name: http://www.americaslibrary.gov/assets/aa/franklinb/aa_franklinb_subj_e.jpg
+          Website URL: https://www.usa.gov
+  Website description: 'Merica
+======================
+Cliques: 
+	~ USA
+	~ Philly

@@ -1,0 +1,10 @@
+Info for Socialite ID: btc
+======================
+           First name: Satoshi
+            Last name: Nakamoto
+    Picture file name: https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png
+          Website URL: http://satoshi.nakamotoinstitute.org
+  Website description: The Complete Satoshi
+======================
+Cliques: 
+This user does not belong to any cliques

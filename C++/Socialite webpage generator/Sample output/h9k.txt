@@ -1,0 +1,11 @@
+Info for Socialite ID: h9k
+======================
+           First name: HAL
+            Last name: 9000
+    Picture file name: https://upload.wikimedia.org/wikipedia/commons/f/f6/HAL9000.svg
+          Website URL: http://www.ibm.com
+  Website description: HAL Laboratories, Urbana, IL
+======================
+Cliques: 
+	~ USA
+	~ Discovery XRD1

@@ -1,0 +1,12 @@
+Info for Socialite ID: hFloyd
+======================
+           First name: Heywood
+            Last name: Floyd
+    Picture file name: http://images1.wikia.nocookie.net/__cb20090905005558/2001/images/9/9a/2001_Floyd_publicity_still.jpg
+          Website URL: http://www.imdb.com/title/tt0062622/
+  Website description: IMDB page for 2OO1, A Space Odyssey
+======================
+Cliques: 
+	~ USA
+	~ Space Station V
+	~ United States Astronautics Agency
