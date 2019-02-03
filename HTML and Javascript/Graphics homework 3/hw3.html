@@ -1,0 +1,177 @@
+<!DOCTYPE html><!---------------------
+---- Andrew Yaros | CS 432 | HW 3 ----
+------------------------------------->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Andrew Yaros CS 432 HW 3</title>
+		
+		<!-----------
+		-- Shaders --
+		------------>
+		
+		<!-- Vertex shader -->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 vColor;
+			
+			varying vec4 fColor;
+			
+			void main() {
+				gl_Position = vPosition;
+				fColor = vColor;
+			}
+		</script>
+		
+		<!-- Fragment shader -->
+		<script id="fragment-shader" type="x-shader/x-vertex">
+			precision highp float;
+			uniform vec4 color;
+			
+			void main() {
+				gl_FragColor = color;
+			}
+		</script>
+		
+		<!-- Fragment shader with uniform variable -->
+		<script id="fragment-shader-alt" type="x-shader/x-fragment">
+			precision highp float;
+			
+			varying vec4 fColor;
+			void main() {
+				gl_FragColor = fColor;
+			}
+		</script>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="./Common/initShaders.js"></script>
+		<script type="text/javascript" src="./Common/MV.js"></script>
+		<script type="text/javascript" src="./hw3.js"></script>
+		
+		<!----------
+		-- Styles --
+		----------->
+		
+		<style>
+			body {
+				background-color:	#444444;
+				color: 				#dddddd;
+				font-family: 		Helvetica, Arial, sans-serif;
+				font-size: 			10pt;
+			} #mainContainer {
+				margin: 			auto;
+				width: 				750px;
+				background-color: 	#252525;
+				box-shadow: 		0px 0px 30px #000000;
+				padding:			10px;
+				padding-top:		50px;
+				margin-top: 		-50px;
+				border-radius:		20px;
+			} #modules {
+				padding-right:		10px;
+				padding-top: 		10px;
+			} .module {
+				width: 				210px;
+				padding: 			10px;
+				margin-bottom:		10px;
+				font-size: 			10pt;
+				background-color: 	#303030;
+				border:				1px solid #3a3a3a;
+				border-radius:		15px;
+			} #squareColorSelector, #DirectionButton {
+				width: 				100%;
+			} #squareColorSelector {
+				height: 			80px;
+				margin-bottom: 		5px;
+			} #gl-container {
+				min-width: 			500px;
+				min-height: 		500px;
+			} #gl-canvas {
+				border-radius:		15px;
+			} .slider {
+				width: 				80%;
+			} button {
+				border:				1px solid #6a6a6a;
+				border-radius: 		30px;
+			} button, select {
+				background-color:	#3a3a3a;
+				color: 				#ffffff;
+			} button:hover {
+				background-color:	#585858;
+			} button:active {
+				background-color:	#ffffff;
+				color: 				#000000;
+			} #optionTitle {
+				color: 				#ffffff;
+				background-color: 	#222222;
+				padding-bottom: 	10px;
+				padding-top: 		10px;
+				border-bottom: 		1px solid #777777;
+				font-weight: 		bold;
+			} option {
+				margin-bottom: 		6px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<table>
+				<tr>
+					<td>
+						<div id="modules">
+							<!-- User instructions -->
+							<div class="module">
+								<span style="font-size: 12pt; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: .5px; line-height: 15pt;">
+									Andrew Yaros<br/>CS 432 - Homework 3
+								</span><br/>
+								<hr>
+								<span style="font-size: 9pt;">
+								The controls below are labeled with their functionality. Additionally, you can change the ellipse's color by pressing 'r' (red), 'g' (green), 'b' (blue), 'y' (yellow), 'p' (purple), or 'w' (white), and can click anywhere inside the black area to create small pentagon shapes.
+								</span>
+							</div>
+							
+							<!-- Controls -->
+							<div class="module">
+								Speed controller for shape rotation and circle "breathing"<br/><br/>
+									0 <input id="theslider" class="slider" 
+										type="range" min="0" max="100" 
+										step="2" value="50" /> 100
+							</div>
+							
+							<div class="module">
+								<div style="padding-bottom: 8px;">Change square color:</div>
+								<select id="squareColorSelector" size="3" autofocus>
+									<option value="0" selected>White</option>
+									<option value="1">Pink</option>
+									<option value="2">Yellow</option>
+									<option value="3">Cyan</option>
+									<option value="4">Lime</option>	
+								</select>
+							</div>
+							
+							<div class="module">
+								<button onclick="toggleDirection()" 
+									id="DirectionButton">
+									Change rotation direction<br/>
+									for the	square &amp; triangle
+								</button>
+							</div>
+						</div>
+					</td>
+					
+					<td>
+						<!-- Canvas element -->
+						<div id="gl-container">
+							<canvas id="gl-canvas" width="500px" height="500px" 
+									onmousedown="makeNewPentagon(event.offsetX,event.offsetY)" >
+								<div style="text-align: center; padding: 125px; font-style: italic;">Your crappy old (or new, if you're reading this 50 years from now) browser doesn't support the HTML5 canvas element. How do you live with yourself?</div>
+							</canvas>
+						</div>
+					</td>
+					
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
