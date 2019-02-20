@@ -29,7 +29,7 @@ var yellow = vec4(1,1,0, 1);
 var lime   = vec4(0,1,0, 1);
 var cyan   = vec4(0,1,1, 1);
 var blue   = vec4(0,0,1, 1);
-var green   = vec4(0.0, 0.5, 0.0, 1);
+var green  = vec4(0.0, 0.5, 0.0, 1);
 var purple  = vec4(0.5, 0.0, 0.5, 1);
 
 var currentSquareColor = white;
