@@ -1,0 +1,9 @@
+ConsoleGenerator.class
+Filter.class
+Alphabetizer.class
+PipeImpl.class
+UpperCaseMain.class
+FileGenerator.class
+Pipe.class
+CircularShifter.class
+UpperCaseConverter.class
