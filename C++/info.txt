@@ -1,0 +1,3 @@
+C++ Assignments
+
+This consists of basic assignments from my intro programming classes.

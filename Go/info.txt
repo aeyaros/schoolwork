@@ -1,0 +1,3 @@
+Go Assignments
+
+Right now, this consists only of an implementation of the dining philosopher's problem I did for a concurrent programming class. Go is a fun language though, and I'd like to do more with it in the future.

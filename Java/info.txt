@@ -1,0 +1,3 @@
+Java Assignments
+
+This consists of some software design and software engineering projects, and some concurrent programming assignments.

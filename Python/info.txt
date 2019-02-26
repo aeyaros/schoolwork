@@ -1,0 +1,3 @@
+Python Assignments
+
+Here we have a couple of basic assignments and some data structure implementations.

@@ -1,0 +1,3 @@
+HTML/Javascript Assignments
+
+This consists of a couple of group projects, as well as some homework from my graphics class.
