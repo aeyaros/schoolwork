@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!----------
+------------
+Andrew Yaros
+CS 432 HW #4
+------------
+----------->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Andrew Yaros | CS 432 HW 4</title>
+		
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 vColor;
+			
+			varying vec4 fColor;
+			
+			uniform vec3 rotate;
+			uniform vec3 scale;
+			uniform vec3 translate;
+			
+			void main() {
+				//convert from degrees to radians; get sines and cosines
+				vec3 angles = radians(rotate);
+				vec3 c = cos(angles);
+				vec3 s = sin(angles);
+				
+				//shorter vector names for scale and translate matrices
+				vec3 B = scale;     //"beta"
+				vec3 A = translate; //"alpha"
+								
+				//x rotation
+				mat4 rx = mat4(
+					 1,    0,    0,  0, //col 1
+					 0,  c.x,  s.x,  0, //col 2
+					 0, -s.x,  c.x,  0, //col 3
+					 0,    0,    0,  1  //col 4
+				);
+				
+				//y rotation
+				mat4 ry = mat4(
+					 c.y,  0, -s.y,  0,
+					   0,  1,    0,  0,
+					 s.y,  0,  c.y,  0,
+					   0,  0,    0,  1
+				);
+				
+				//z rotation
+				mat4 rz = mat4(
+					 c.z,  s.z,  0,  0,
+					-s.z,  c.z,  0,  0,
+					   0,    0,  1,  0,
+					   0,    0,  0,  1
+				);
+				
+				//scale
+				mat4 S = mat4(
+					B[0],    0,    0, 0,
+					   0, B[1],    0, 0,
+					   0,    0, B[2], 0,
+					   0,    0,    0, 1
+				);
+				
+				//translation
+				mat4 T = mat4(
+					   1,    0,    0, 0,
+					   0,    1,    0, 0,
+					   0,    0,    1, 0,
+					A[0], A[1], A[2], 1
+				);
+
+				fColor = vColor;
+				
+				//multiply matrices together - scale, rotate, translate
+				gl_Position = S * rz * ry * rx * T * vPosition;
+				
+				gl_Position.z = -gl_Position.z;
+			}
+		</script>
+
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			
+			varying vec4 fColor;
+			
+			void main() {
+				gl_FragColor = fColor;
+			}
+		</script>
+		
+		<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="./Common/initShaders.js"></script>
+		<script type="text/javascript" src="./Common/MV.js"></script>
+		<script type="text/javascript" src="hw4.js"></script>
+		
+		<style>
+			body {
+				font-family: sans-serif;
+				background-color: #e0e0e0;
+			}  h1,h2,h3,h4,h5,h6 {
+				text-transform: uppercase;
+				text-align: center;
+			} #mainDiv {
+				margin: auto;
+				margin-top: 55px;
+				width: 768px;
+				padding: 20px;
+				background-color: #f2f2f2;
+				border-radius: 100px;
+				box-shadow: 0px 0px 50px #f2f2f2, 0px 0px 50px #f2f2f2, 0px 0px 50px #f2f2f2;
+			} .outerTable {
+				margin: auto;
+				width: 100%;
+			} .innerTable {
+				padding-right: 1px;
+			} #leftColumn {
+				width: 180px;
+				padding: 10px;
+			} #bottomRow {
+				width: 512px
+			} .module {
+				text-align: center;
+				font-size: 14pt;
+				font-weight: bold;
+				padding-top: 32px;
+			} .button1 {
+				width: 60px;
+				height: 40px;
+				background-color: #f8f8f8;
+				border: 1px solid #999999;
+				border-radius: 5px;
+				font-weight: bold;
+				font-size: 14pt;
+				margin: 4px;
+			} .selector, .buttons {
+				width: 100%;
+			} .selector {
+				margin-top: 10px;
+				text-align: left;
+				border: 2px solid #999999;
+				background-color: #ffffff;
+			} .buttons {
+				width: 100%;
+				text-align: center;
+				margin-top: 10px;
+			} option {
+				font-size: 12pt;
+			} .cellH {
+				text-align: center;
+				font-weight: bold;
+			} .cell {
+				min-width: 48px;
+				text-align: center;
+				height: 20px;
+			} .value {
+				background-color: #ffffff;
+			} textarea {
+				width: 90%!important;
+				height: 20px;
+				resize: none!important;
+				border: none!important;
+				text-align: center;
+				font-weight: bold;
+				background-color: #ffffff;
+			} #gl-canvas {
+				margin: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mainDiv">
+			<h2>
+				Andrew Yaros - CS 432 - Assignment 4
+			</h2>
+			<div style="text-align: justify;">
+				Use the arrow buttons and menus below to adjust the transformation values of the cube. You may also press certain keys to increment/decrement the transfomation values, depending on the selected transformation: a/d to adjust the X axis, w/s to adjust the Y axis, and q/e to adjust the Z axis. Press "r" to reset the values.
+			</div>
+			<table class="outerTable"><tr>
+				<td id="leftColumn">
+					<div class="module">Axis:
+						<select class="selector" id="axisSelector" size="3" autofocus>
+							<option value="0" selected>X axis</option>
+							<option value="1">Y axis</option>
+							<option value="2">Z axis</option>
+						</select>
+					</div>
+					
+					<div class="module">Adjust selected value:
+						<div class="buttons">
+							<button class="button1" id="upButton"
+									onclick="changeSelected(false)">&#8593;</button>
+							<button class="button1" id="downButton"
+									onclick="changeSelected(true)">&#8595;</button>
+						</div>
+					</div>
+					
+					
+					<div class="module">Transformation:
+						<select class="selector" id="transformSelector" size="3" autofocus>
+							<option value="0" selected>Scale value</option>
+							<option value="1">Rotate value</option>
+							<option value="2">Translate value</option>
+						<!--<option value="3">Scale &#916;</option>
+							<option value="4">Rotate &#916;</option>
+							<option value="5">Translate &#916;</option>-->
+						</select>
+					</div>
+					
+					<div class="module">Reset values:
+						<div class="buttons">
+							<button class="button1" id="resetValues">&#8634;</button>
+						</div>
+					</div>
+				</td>
+				<td>
+					<canvas id="gl-canvas" width="500px" height="500px">
+						You can't use WebGL. :(
+					</canvas>
+				</td>
+			</tr></table>
+			
+			<table id="bottomRow" class="outerTable"><tr>
+				<td>
+					<table class="innerTable">
+						<tr><td class="cell"></td></tr>
+						<tr><td class="cell"></td></tr>
+						<tr><td class="cell cellH">Values</td></tr>
+						<!--<tr><td class="cell cellH">Deltas</td></tr>-->
+					</table>
+				</td><td>
+					<table class="innerTable">
+						<tr><td colspan="3" class="cellH">Scale</td></tr>
+						<tr>
+							<td class="cell">X</td>
+							<td class="cell">Y</td>
+							<td class="cell">Z</td>
+						</tr>
+						<tr>
+							<td class="cell value"><textarea readonly id="x_ScaleValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_ScaleValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_ScaleValue"></textarea></td>
+						</tr>
+						<!--<tr>
+							<td class="cell value"><textarea readonly id="x_ScaleDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_ScaleDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_ScaleDelta"></textarea></td>
+						</tr>-->
+					</table>
+				</td><td>
+					<table class="innerTable">
+						<tr><td colspan="3" class="cellH">Rotate</td></tr>
+						<tr>
+							<td class="cell">X</td>
+							<td class="cell">Y</td>
+							<td class="cell">Z</td>
+						</tr>
+						<tr>
+							<td class="cell value"><textarea readonly id="x_RotateValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_RotateValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_RotateValue"></textarea></td>
+						</tr>
+						<!--<tr>
+							<td class="cell value"><textarea readonly id="x_RotateDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_RotateDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_RotateDelta"></textarea></td>
+						</tr>-->
+					</table>
+				</td><td>
+					<table class="innerTable">
+						<tr><td colspan="3" class="cellH">Translate</td></tr>
+						<tr>
+							<td class="cell">X</td>
+							<td class="cell">Y</td>
+							<td class="cell">Z</td>
+						</tr>
+						<tr>
+							<td class="cell value"><textarea readonly id="x_TranslateValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_TranslateValue"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_TranslateValue"></textarea></td>
+						</tr>
+						<!--<tr>
+							<td class="cell value"><textarea readonly id="x_TranslateDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="y_TranslateDelta"></textarea></td>
+							<td class="cell value"><textarea readonly id="z_TranslateDelta"></textarea></td>
+						</tr>-->
+					</table>
+				</td>
+			</tr></table>
+		</div>
+	</body>
+</html>
