@@ -1,0 +1,101 @@
+<!DOCTYPE html><!-----------------
+-- Andrew Yaros - CS 432 - HW 5 --
+--------- Main HTML file ---------
+--------------------------------->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CS 432 HW #5 | Andrew Yaros</title>
+		
+		<!-- Shaders -->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 vColor;
+			varying vec4 fColor;
+			
+			uniform mat4 MV; 
+			uniform mat4 P;
+			
+			void main() {
+				fColor = vColor;
+				//multiply matrices together
+				gl_Position = P * MV * vPosition;
+			}
+		</script>
+
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision highp float;
+			varying vec4 fColor;
+			void main() {
+				gl_FragColor = fColor;
+			}
+		</script>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="./Common/initShaders.js"></script>
+		<script type="text/javascript" src="./Common/MV.js"></script>
+		<script type="text/javascript" src="./SMFfile.js"></script>
+		<script type="text/javascript" src="./hw5.js"></script>
+		<style>
+			body{
+				font-family: sans-serif;
+				background-color: #888888;
+				font-size: 12pt;
+			} #mainContainer {
+				margin: auto;
+				width: 780px;
+			} #info {
+				/*height: 500px;*/
+			} .header{ 
+				width: 100%;
+				text-transform: uppercase;
+				text-align: center;
+				font-weight: bold;
+				font-size: 14pt;
+				padding-bottom: 10px;
+				padding-top: 20px;
+			} #info, #gl-canvas {
+				padding: 20px;
+				border-radius: 20px;
+				background-color: #ffffff;
+			} .selector {
+				width: 100%;
+				font-size: 12pt;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<table width="100%">
+				<tr>
+					<td>
+						<div id="info">
+						<div class="header">
+							Andrew Yaros<br/>
+							CS 432<br/>
+							Assignment 5
+						</div>
+						<p>To increase/decrease the height, press <b>w/s</b>.</p>
+						<p>To rotate cylinder left/right, press <b>a/d</b>.</p>
+						<p>To decrease/increase the orbit radius, press <b>q/e</b>.</p>
+						<p>To reset your changes to the view, press <b>r</b>.</p>
+						To change the projection, use the menu below.
+						<div class="header">Projections</div>
+						<select class="selector" id="projectSelector" size="2" autofocus>
+							<option value="0" selected>Parallel</option>
+							<option value="1">Perspective</option>
+						</select>
+						</div>
+					</td>
+					<td>
+						<canvas id="gl-canvas"
+							width="500px" height="500px">
+							Uh oh... You can't use WebGL. :(
+						</canvas>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
