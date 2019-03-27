@@ -1,0 +1,156 @@
+<!DOCTYPE html><!-----------------
+-- Andrew Yaros - CS432 - HW 10 --
+--------- Main HTML file ---------
+--------------------------------->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CS 432 HW #10 | Andrew Yaros</title>
+		
+		<!-- Shaders -->				
+		<script id="gouraud-vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec3 vNormal;
+			attribute vec4 vColor;
+			varying vec4 fColor;
+			uniform mat4 MV; 
+			uniform mat4 P;
+			uniform vec4 A, D, S;
+			uniform vec3 lP;
+			uniform float sH;
+			
+			void main() {
+				vec3 pos = -(MV * vPosition).xyz;
+				vec3 light = lP;
+				vec3 L = normalize(light - pos);
+				vec3 E = normalize(-pos);
+				vec3 H = normalize(L + E);
+				vec4 NN = vec4(vNormal, 0);
+				vec3 N = normalize((MV * NN).xyz);
+				vec4 ambient = A;
+				float Kd = max(dot(L, N), 0.0);
+				vec4 diffuse = Kd * D;
+				float Ks = pow( max(dot(N, H), 0.0), sH);
+				vec4 specular = Ks * S;
+				if(dot(L, N) < 0.0) { 
+					specular = vec4(0.0, 0.0, 0.0, 1.0);
+				}
+				gl_Position = P * MV * vPosition;
+				fColor = ambient + diffuse + specular;
+				fColor.a = 1.0;
+			}
+		</script>
+		<script id="gouraud-fragment-shader" type="x-shader/x-fragment">
+			precision highp float;
+			varying vec4 fColor;
+			void main() { gl_FragColor = fColor; }
+		</script>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="./Common/initShaders.js"></script>
+		<script type="text/javascript" src="./Common/MV.js"></script>
+		<script type="text/javascript" src="./hw10.js"></script>
+		
+		<style>
+			body{
+				font-family: sans-serif;
+				background-color: #550000;
+				font-size: 12pt;
+			} #mainContainer {
+				margin: auto;
+				width: 780px;
+				border-radius: 40px;
+				background-color: #ffffff;
+				margin-top: 20px;
+				box-shadow: 0px 0px 300px #ff0000, 0px 5px 15px #000000;
+			} .header{ 
+				width: 100%;
+				text-transform: uppercase;
+				text-align: center;
+				font-weight: bold;
+				font-size: 14pt;
+				padding-bottom: 10px;
+				padding-top: 20px;
+			} #info, #gl-canvas {
+				background-color: #transparent;
+				margin: auto;
+			} #info {
+				
+				padding: 15px;
+			} #gl-canvas {
+				border-radius: 30px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			} .module {
+				border-top: 1px solid #bbbbbb;
+				padding-top: 9px;
+				padding-bottom: 9px;
+				text-align: left;
+			} .slidercontainer {
+				padding-top: 7px;
+				text-align: center;
+				font-size: 11pt;
+			}.slider {
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<table width="100%">
+				<tr>
+					<td>
+						<div id="info">
+							<div class="header" 
+								style="border-bottom: 1px solid #bbbbbb;">
+								Andrew Yaros - CS 432<br/>
+								Assignment 10
+								<br/>
+							</div>
+							<br/>
+							<div style="font-size: 10pt;">
+								Press <b>w/s</b> to increase/decrease the view height. 
+								Press <b>a/d</b> to rotate the view left/right. 
+								Press <b>q/e</b> to decrease/increase the orbit radius. 
+								Use the sliders below to adjust the robotic arm's joints. They can also be controlled with keys; press <b>t</b>/<b>y</b> to move the first joint, <b>g</b>/<b>h</b> for the second, and <b>b</b>/<b>n</b> for the third. 
+								Press <b>r</b> to reset view changes and <b>x</b> to reset joint adjustments.
+							</div>
+							<div class="header">Arm Controls</div>
+							<div class="module">
+								Joint 1 rotation control: (<b>t</b>/<b>y</b>)<br/>
+								<div class="slidercontainer">
+									-180&#176; <input id="joint1" class="slider" 
+										type="range" min="-180" max="180" 
+										step="1" value="0" /> 180&#176;
+								</div>
+							</div>
+							<div class="module">
+								Joint 2 rotation control: (<b>g</b>/<b>h</b>)<br/>
+								<div class="slidercontainer">
+									-140&#176; <input id="joint2" class="slider" 
+										type="range" min="-140" max="140" 
+										step="1" value="0" /> 140&#176;
+								</div>
+							</div>
+							<div class="module">
+								Joint 3 translation control: (<b>b</b>/<b>n</b>)<br/>
+								<div class="slidercontainer">
+									-100&#37; <input id="joint3" class="slider" 
+										type="range" min="-100" max="100" 
+										step="1" value="0" /> 100&#37;
+								</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<canvas id="gl-canvas"
+							width="500px" height="500px">
+							Uh oh... You can't use WebGL. :(
+						</canvas>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
